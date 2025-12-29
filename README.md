@@ -56,7 +56,11 @@ The core intelligence relies on a structured **System Prompt** injected into eve
 **[Click Here to Watch the App Demo]()**
 
 
-https://github.com/user-attachments/assets/4f213bc5-3749-4cee-a2e8-98743c03418a
+
+
+https://github.com/user-attachments/assets/f107cb4c-63a9-42fa-8844-c55a84ba7e66
+
+
 
 
 ---
