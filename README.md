@@ -1,40 +1,69 @@
-# Fitness Chatbot – Starter Template (Track A)
+# FitBot: Adaptive AI Fitness Companion 🏋️‍♂️🤖
 
-This repository is a **starter template** for the React Native assignment.
+A mobile-first AI fitness chatbot built with **React Native (Expo)**, **Node.js**, and **SQLite**. 
+The AI dynamically adapts its personality, tone, and advice based on the user's psychological profile and real-time lifestyle data.
 
-## Tech Stack
-- React Native (Expo – Managed Workflow)
-- Expo SDK 50
-- Node.js 20 (LTS)
+## 🚀 Key Features
 
-## What This Repo Contains
-- Standard Expo setup
-- Fixed folder structure
-- Version-locked environment
+* **📊 Visual Dashboard:** Real-time tracking of Steps and Sleep with visual progress bars.
+* **🧠 Adaptive Personalities:** Switches between "Supportive", "Creative", and "Strict" modes instantly.
+* **💾 Local History:** Uses **SQLite** to persist chat history and context.
+* **🛡️ Medical Guardrails:** Automatically detects and blocks medical queries (e.g., "fracture", "pain").
 
-## What This Repo Does NOT Contain
-- No AI logic
-- No prompt logic
-- No safety logic
-- No UI implementation
+## 🛠 Tech Stack
 
-All functionality must be implemented by the candidate.
+* **Frontend:** React Native (Expo Router)
+* **Backend:** Node.js + Express
+* **Database:** SQLite3 (Local storage)
+* **AI Engine:** Groq (Llama-3-70b) - *chosen for ultra-low latency*
+
+## 🧠 Prompt Engineering Strategy
+
+The core intelligence relies on a structured **System Prompt** injected into every API call. The prompt is constructed dynamically in `server.js`:
+
+1.  **Personality Injection:**
+    * *Type A (Seeker):* Instructions to be "empathetic, supportive, and use emojis."
+    * *Type C (Finisher):* Instructions to be "strict, concise, and efficiency-focused."
+2.  **Context Layer:**
+    * User stats (Steps/Sleep) are inserted directly into the prompt.
+    * *Logic:* If `sleep < 6h`, the prompt instructs the AI to prioritize "Recovery" over "Workouts".
+3.  **Safety Layer:**
+    * The prompt explicitly forbids answering questions related to specific medical keywords.
+
+## 💿 Installation & Running
+
+1.  **Clone the Repository**
+    ```bash
+    git clone <your-repo-link>
+    cd fitness-ai-companion
+    ```
+
+2.  **Setup Backend**
+    ```bash
+    cd server
+    npm install
+    # Create .env with GROQ_API_KEY=...
+    node server.js
+    ```
+
+3.  **Setup Frontend**
+    ```bash
+    cd ..
+    npm install
+    npx expo start
+    ```
+    # 📺 Demo Video
+**[Click Here to Watch the App Demo]()**
+
+
+
+
+https://github.com/user-attachments/assets/f107cb4c-63a9-42fa-8844-c55a84ba7e66
+
+
+
 
 ---
 
-## Mandatory Rules
-
-- Use **Expo Managed Workflow only**
-- Do **not eject**
-- Do **not change Expo SDK version**
-- Use **Node.js 20.x**
-- Do **not commit API keys**
-- Follow provided folder structure
-
----
-
-## How Evaluators Will Run the App
-
-```bash
-npm install
-npx expo start
+# FitBot: Adaptive AI Fitness Companion 🏋️‍♂️🤖
+(Rest of readme...)
